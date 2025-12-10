@@ -97,7 +97,7 @@ class LotkaVolterraSimulation {
             type: 'scatter',
             data: {
                 datasets: [{
-                    label: 'Faz məkanı',
+                    label: 'Faza fəzası',
                     data: [],
                     backgroundColor: '#64b5f6',
                     borderColor: '#64b5f6',
