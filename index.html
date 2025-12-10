@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotka-Volterra Modeli Simulyasiyası</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lotka-Volterra Modeli Simulyasiyası</h1>
+            <p class="subtitle">Qarşılıqlı təsiredici populyasiyaların dinamikası</p>
+        </header>
+
+        <div class="main-content">
+            <div class="simulation-panel">
+                <div class="chart-container">
+                    <canvas id="populationChart"></canvas>
+                </div>
+                
+                <div class="phase-space-container">
+                    <canvas id="phaseSpaceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <h3>Parametrlər</h3>
+                
+                <div class="parameter-group">
+                    <label for="preyGrowth">Qurban artım sürəti (a): <span id="preyGrowthValue">1.0</span></label>
+                    <input type="range" id="preyGrowth" min="0.1" max="3" step="0.1" value="1.0">
+                </div>
+
+                <div class="parameter-group">
+                    <label for="predationRate">Ovlanma sürəti (b): <span id="predationRateValue">0.1</span></label>
+                    <input type="range" id="predationRate" min="0.01" max="0.5" step="0.01" value="0.1">
+                </div>
+
+                <div class="parameter-group">
+                    <label for="predatorDeath">Yırtıcı ölüm sürəti (c): <span id="predatorDeathValue">1.0</span></label>
+                    <input type="range" id="predatorDeath" min="0.1" max="3" step="0.1" value="1.0">
+                </div>
+
+                <div class="parameter-group">
+                    <label for="predatorEfficiency">Yırtıcı effektivliyi (d): <span id="predatorEfficiencyValue">0.075</span></label>
+                    <input type="range" id="predatorEfficiency" min="0.01" max="0.2" step="0.005" value="0.075">
+                </div>
+
+                <div class="population-group">
+                    <h4>Başlanğıc Populyasiyalar</h4>
+                    <div class="parameter-group">
+                        <label for="preyInitial">Qurban sayı: <span id="preyInitialValue">10</span></label>
+                        <input type="range" id="preyInitial" min="1" max="100" step="1" value="10">
+                    </div>
+                    
+                    <div class="parameter-group">
+                        <label for="predatorInitial">Yırtıcı sayı: <span id="predatorInitialValue">5</span></label>
+                        <input type="range" id="predatorInitial" min="1" max="50" step="1" value="5">
+                    </div>
+                </div>
+
+                <div class="control-buttons">
+                    <button id="startBtn" class="btn primary">Başlat</button>
+                    <button id="pauseBtn" class="btn secondary">Dayandır</button>
+                    <button id="resetBtn" class="btn danger">Sıfırla</button>
+                </div>
+
+                <div class="stats">
+                    <h4>Statistika</h4>
+                    <div class="stat-item">
+                        <span class="stat-label">Vaxt:</span>
+                        <span id="timeDisplay">0.0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Qurban:</span>
+                        <span id="preyCount">10</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Yırtıcı:</span>
+                        <span id="predatorCount">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>Model Haqqında</h3>
+            <p>Lotka-Volterra modeli predator-qurban münasibətlərini təsvir edən riyazi modeldir. Model dörd əsas parametrdən ibarətdir:</p>
+            <ul>
+                <li><strong>a:</strong> Qurbanların təbii artım sürəti</li>
+                <li><strong>b:</strong> Qurbanların yırtıcılar tərəfindən ovlanma sürəti</li>
+                <li><strong>c:</strong> Yırtıcıların təbii ölüm sürəti</li>
+                <li><strong>d:</strong> Yırtıcıların qurbanları yeyərək əldə etdiyi enerjinin çevrilmə effektivliyi</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="simulation.js"></script>
+</body>
+</html>
+
