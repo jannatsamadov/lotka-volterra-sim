@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
     <div class="container">
@@ -88,12 +92,20 @@
 
         <div class="info-panel">
             <h3>Model Haqqında</h3>
-            <p>Lotka-Volterra modeli predator-qurban münasibətlərini təsvir edən riyazi modeldir. Model dörd əsas parametrdən ibarətdir:</p>
+            <p>Lotka–Volterra modeli ekologiyada yırtıcı ilə qurban arasındakı qarşılıqlı təsiri sadə şəkildə izah edən riyazi yanaşmadır. 
+                Bu modeldə iki populyasiya nəzərə alınır: qurbanlar, məsələn dovşanlar, və yırtıcılar, məsələn tülkülər. Qurbanlar öz-özünə çoxalır, lakin yırtıcılar onları ovladıqca sayları azalır. 
+                Yırtıcılar isə yalnız qurbanları ovlamaqla enerji qazanır və çoxalır, amma qurban azaldıqda aclıqdan məhv olurlar. Bu qarşılıqlı təsir nəticəsində hər iki populyasiyanın sayı dövri şəkildə dalğalanır: əvvəlcə qurbanların sayı artır, sonra yırtıcıların sayı yüksəlir, ardınca qurbanlar azalır və nəticədə yırtıcılar da azalır. Beləliklə, model canlıların bir-birinə bağlı həyat dövrünü riyazi tənliklərlə ifadə edir. </p>
+
+            <h4>Modeli riyazi təsvir edən diferensial tənliklər sistemi aşağıdakı kimidir:</h4>
+            <p>$$\begin{cases} \frac{dN}{dt} = aN - bNP \\ \frac{dP}{dt} = dbNP - cP \end{cases}$$</p>
+            <p>Burada:</p>
             <ul>
+                <li><strong>N:</strong> Qurbanların sayı</li>
+                <li><strong>P:</strong> Yırtıcıların sayı</li>
                 <li><strong>a:</strong> Qurbanların təbii artım sürəti</li>
                 <li><strong>b:</strong> Qurbanların yırtıcılar tərəfindən ovlanma sürəti</li>
                 <li><strong>c:</strong> Yırtıcıların təbii ölüm sürəti</li>
-                <li><strong>d:</strong> Dovşan sayının canavarların artma sürətinə təsiri</li>
+                <li><strong>d:</strong> Qurban sayının yırtıcıların artma sürətinə təsiri</li>
             </ul>
         </div>
     </div>
