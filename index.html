@@ -11,6 +11,13 @@
     <script id="MathJax-script" async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
 </head>
 <body>
     <div class="container">
@@ -97,15 +104,15 @@
                 Yırtıcılar isə yalnız qurbanları ovlamaqla enerji qazanır və çoxalır, amma qurban azaldıqda aclıqdan məhv olurlar. Bu qarşılıqlı təsir nəticəsində hər iki populyasiyanın sayı dövri şəkildə dalğalanır: əvvəlcə qurbanların sayı artır, sonra yırtıcıların sayı yüksəlir, ardınca qurbanlar azalır və nəticədə yırtıcılar da azalır. Beləliklə, model canlıların bir-birinə bağlı həyat dövrünü riyazi tənliklərlə ifadə edir. </p>
 
             <h4>Modeli riyazi təsvir edən diferensial tənliklər sistemi aşağıdakı kimidir:</h4>
-            <p>$$\begin{cases} \frac{dN}{dt} = aN - bNP \\ \frac{dP}{dt} = dbNP - cP \end{cases}$$</p>
+            <p>$$\begin{cases} \displaystyle \frac{dN}{dt} = \alpha \cdot N - \beta \cdot N \cdot P \\[10pt] \displaystyle \frac{dP}{dt} = \delta \cdot \beta \cdot N \cdot P - \gamma \cdot P \end{cases}$$</p>
             <p>Burada:</p>
             <ul>
                 <li><strong>N:</strong> Qurbanların sayı</li>
                 <li><strong>P:</strong> Yırtıcıların sayı</li>
-                <li><strong>a:</strong> Qurbanların təbii artım sürəti</li>
-                <li><strong>b:</strong> Qurbanların yırtıcılar tərəfindən ovlanma sürəti</li>
-                <li><strong>c:</strong> Yırtıcıların təbii ölüm sürəti</li>
-                <li><strong>d:</strong> Qurban sayının yırtıcıların artma sürətinə təsiri</li>
+                <li><strong>$\alpha$:</strong> Qurbanların təbii artım sürəti</li>
+                <li><strong>$\beta$:</strong> Qurbanların yırtıcılar tərəfindən ovlanma sürəti</li>
+                <li><strong>$\gamma$:</strong> Yırtıcıların təbii ölüm sürəti</li>
+                <li><strong>$\delta$:</strong> Qurban sayının yırtıcıların artma sürətinə təsiri</li>
             </ul>
         </div>
     </div>
